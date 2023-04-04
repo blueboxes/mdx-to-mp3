@@ -16,7 +16,7 @@ internal class Program
             throw new ArgumentException("You must provide both a source and target file paths");
 
         if (!File.Exists(args[0]))
-            throw new FileNotFoundException("You must provide both a valid source path");
+            throw new FileNotFoundException($"The file at the path {args[0]} provided as the source must exist");
 
         var configuration = new ConfigurationBuilder()
         .AddJsonFile("appsettings.json", true);
